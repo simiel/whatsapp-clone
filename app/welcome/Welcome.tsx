@@ -10,6 +10,12 @@ import React from 'react';
 import { useRouter } from 'expo-router';
 import { ArrowDown2, Global, More } from 'iconsax-react-native';
 import Colors from '@/constants/Colors';
+import {
+  Menu,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+} from 'react-native-popup-menu';
 
 const Welcome = () => {
   const router = useRouter();
@@ -33,12 +39,19 @@ const Welcome = () => {
               padding: 0,
             }}
           >
-            <More
-              size={24}
-              color='black'
-              variant='Broken'
-              style={{ transform: [{ rotate: '90deg' }] }}
-            />
+            <Menu>
+              <MenuTrigger>
+                <More
+                  size={24}
+                  color='black'
+                  variant='Broken'
+                  style={{ transform: [{ rotate: '90deg' }] }}
+                />
+              </MenuTrigger>
+              <MenuOptions optionsContainerStyle={{ paddingVertical: 10 }}>
+                <MenuOption text='Help' />
+              </MenuOptions>
+            </Menu>
           </TouchableOpacity>
           <View
             style={{
@@ -90,7 +103,7 @@ const Welcome = () => {
           <TouchableOpacity
             style={{
               flexDirection: 'row',
-              gap: 5,
+              gap: 10,
               backgroundColor: '#F1F1F1',
               padding: 10,
               borderRadius: 30,
@@ -99,7 +112,7 @@ const Welcome = () => {
           >
             <Global size={24} color='green' />
             <Text style={{ color: 'green', fontSize: 16 }}>English</Text>
-            <ArrowDown2 size={24} color='green' />
+            <ArrowDown2 size={18} color='green' />
           </TouchableOpacity>
 
           <TouchableOpacity
