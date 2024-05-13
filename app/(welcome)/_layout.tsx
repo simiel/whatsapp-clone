@@ -1,5 +1,10 @@
-import { Stack } from 'expo-router';
+import Colors from '@/constants/Colors';
+import { Stack, useRouter } from 'expo-router';
+import { ArrowCircleLeft2, ArrowLeft, Level } from 'iconsax-react-native';
+import { Text, TouchableOpacity } from 'react-native';
 export default function Layout() {
+  const router = useRouter();
+
   return (
     <Stack>
       <Stack.Screen
@@ -11,8 +16,17 @@ export default function Layout() {
       <Stack.Screen
         name='Language'
         options={{
-          // Set the presentation mode to modal for our modal route.
           presentation: 'modal',
+          headerTitle: 'App language',
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                router.back();
+              }}
+            >
+              <ArrowLeft size={24} color='black' />
+            </TouchableOpacity>
+          ),
         }}
       />
     </Stack>

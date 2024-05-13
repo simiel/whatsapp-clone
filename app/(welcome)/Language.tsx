@@ -1,10 +1,11 @@
 import { View, Text } from 'react-native';
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
+import { useNavigation } from 'expo-router';
 
 const Language = () => {
   return (
     <View>
-      <Text>Language</Text>
+      <Text>This is my component</Text>
     </View>
   );
 };

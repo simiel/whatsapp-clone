@@ -24,6 +24,10 @@ const Welcome = () => {
     Linking.openURL('https://www.whatsapp.com/legal/#terms-of-service');
   };
 
+  const openLanguageModal = () => {
+    router.push('Language');
+  };
+
   const goToNextScreen = () => {
     router.push('Language');
   };
@@ -100,7 +104,10 @@ const Welcome = () => {
             </Text>
             .
           </Text>
+
+          {/* Language button */}
           <TouchableOpacity
+            onPress={openLanguageModal}
             style={{
               flexDirection: 'row',
               gap: 10,
