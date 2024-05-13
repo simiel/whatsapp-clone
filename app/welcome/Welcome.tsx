@@ -1,37 +1,123 @@
 import {
   View,
   Text,
-  Button,
   SafeAreaView,
   Image,
   TouchableOpacity,
+  Linking,
 } from 'react-native';
 import React from 'react';
 import { useRouter } from 'expo-router';
-import { More } from 'iconsax-react-native';
+import { ArrowDown2, Global, More } from 'iconsax-react-native';
+import Colors from '@/constants/Colors';
 
 const Welcome = () => {
   const router = useRouter();
 
+  const openLink = () => {
+    Linking.openURL('https://www.whatsapp.com/legal/#terms-of-service');
+  };
+
+  const goToNextScreen = () => {
+    router.push('home/Home');
+  };
+
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1, backgroundColor: 'gold' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+      <View style={{ flex: 1, padding: 20 }}>
         {/* menu and pattern image */}
-        <View
-          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-        >
-          <TouchableOpacity style={{ alignSelf: 'flex-end' }}>
-            <More size={30} color='black' />
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          <TouchableOpacity
+            style={{
+              alignSelf: 'flex-end',
+              padding: 0,
+            }}
+          >
+            <More
+              size={24}
+              color='black'
+              variant='Broken'
+              style={{ transform: [{ rotate: '90deg' }] }}
+            />
+          </TouchableOpacity>
+          <View
+            style={{
+              alignSelf: 'center',
+              padding: 0,
+              flex: 1,
+              justifyContent: 'center',
+            }}
+          >
+            <Image
+              source={require('@/assets/images/green.png')}
+              style={{ width: 200, height: 200 }}
+            />
+          </View>
+        </View>
+
+        {/* Info and buttons container */}
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          <Text style={{ fontSize: 28, fontWeight: '500' }}>
+            Welcome to Whatsapp
+          </Text>
+
+          <Text
+            style={{
+              fontSize: 16,
+              marginTop: 15,
+              marginBottom: 15,
+              textAlign: 'center',
+            }}
+          >
+            Read our{' '}
+            <Text
+              style={{
+                color: 'blue',
+              }}
+            >
+              Privacy Policy
+            </Text>
+            . Tap "Agree and continue" to accept the{' '}
+            <Text
+              style={{
+                color: 'blue',
+              }}
+            >
+              Terms of Service
+            </Text>
+            .
+          </Text>
+          <TouchableOpacity
+            style={{
+              flexDirection: 'row',
+              gap: 5,
+              backgroundColor: '#F1F1F1',
+              padding: 10,
+              borderRadius: 30,
+              alignItems: 'center',
+            }}
+          >
+            <Global size={24} color='green' />
+            <Text style={{ color: 'green', fontSize: 16 }}>English</Text>
+            <ArrowDown2 size={24} color='green' />
           </TouchableOpacity>
 
-          {/* <Image
-            source={require('assets/images/pattern.png')}
-            style={{ width: 200, height: 200 }}
-          /> */}
+          <TouchableOpacity
+            onPress={goToNextScreen}
+            style={{
+              marginTop: 'auto',
+              backgroundColor: Colors.teal,
+              width: '100%',
+              padding: 15,
+              alignItems: 'center',
+              borderRadius: 30,
+            }}
+          >
+            <Text style={{ color: 'white', fontWeight: '600', fontSize: 16 }}>
+              Agree and Continue
+            </Text>
+          </TouchableOpacity>
         </View>
-        <View
-          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-        ></View>
       </View>
     </SafeAreaView>
   );
