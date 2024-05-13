@@ -25,7 +25,7 @@ const Welcome = () => {
   };
 
   const goToNextScreen = () => {
-    router.push('home/Home');
+    router.push('Language');
   };
 
   return (

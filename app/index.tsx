@@ -23,7 +23,7 @@ export default function Index() {
       <Text>Running my test.</Text>
       <Button
         title='Start App'
-        onPress={() => router.push('welcome/Welcome')}
+        onPress={() => router.push('(welcome)/Welcome')}
       ></Button>
     </View>
   );
