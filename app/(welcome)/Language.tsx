@@ -13,7 +13,7 @@ const Language = () => {
       },
       {
         id: '2',
-        label: 'Hausa',
+        label: 'Hausa', //
         value: 'option2',
       },
     ],
