@@ -1,22 +1,29 @@
-import { View, Text } from 'react-native';
-import React, { useLayoutEffect, useMemo, useState } from 'react';
-import { useNavigation } from 'expo-router';
+import { View, ScrollView } from 'react-native';
+import React, { useMemo, useState } from 'react';
 import { RadioGroup } from 'react-native-radio-buttons-group';
+import languages from '@/constants/Languages';
+import Colors from '@/constants/Colors';
 
 const Language = () => {
   const radioButtons = useMemo(
-    () => [
-      {
-        id: '1', // acts as primary key, should be unique and non-empty string
-        label: 'English',
-        value: 'option1',
-      },
-      {
-        id: '2',
-        label: 'Hausa', //
-        value: 'option2',
-      },
-    ],
+    () =>
+      languages.map((language, index) => ({
+        id: `${index + 1}`,
+        label: language.englishName,
+        value: language.nativeName,
+        color: Colors.teal,
+        description: language.nativeName,
+        containerStyle: {},
+        descriptionStyle: {
+          marginLeft: 45,
+          marginBottom: 5,
+          fontSize: 12,
+          color: Colors.gray,
+        },
+        labelStyle: {
+          fontSize: 16,
+        },
+      })),
     []
   );
 
@@ -24,17 +31,14 @@ const Language = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: 'white' }}>
-      <RadioGroup
-        radioButtons={radioButtons}
-        onPress={setSelectedId}
-        selectedId={selectedId}
-        containerStyle={{
-          backgroundColor: 'green',
-        }}
-        labelStyle={{
-          backgroundColor: 'red',
-        }}
-      />
+      <ScrollView>
+        <RadioGroup
+          radioButtons={radioButtons}
+          onPress={setSelectedId}
+          selectedId={selectedId}
+          containerStyle={{ alignItems: 'flex-start' }}
+        />
+      </ScrollView>
     </View>
   );
 };
