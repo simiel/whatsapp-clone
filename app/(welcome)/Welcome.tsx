@@ -29,7 +29,7 @@ const Welcome = () => {
   };
 
   const goToNextScreen = () => {
-    router.push('Language');
+    router.push('Phone');
   };
 
   return (

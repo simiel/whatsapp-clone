@@ -29,6 +29,7 @@ export default function Layout() {
           ),
         }}
       />
+      <Stack.Screen name='Phone' options={{ headerShown: false }} />
     </Stack>
   );
 }
