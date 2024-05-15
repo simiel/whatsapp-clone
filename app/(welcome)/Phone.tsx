@@ -61,7 +61,7 @@ const Phone = () => {
         {/* Phone input */}
         <View
           style={{
-            marginTop: 30,
+            marginTop: 40,
             marginHorizontal: 20,
           }}
         >
@@ -139,7 +139,14 @@ const Phone = () => {
             marginTop: 'auto',
           }}
         >
-          <Text style={{ color: 'white', textAlign: 'center', fontSize: 16 }}>
+          <Text
+            style={{
+              color: 'white',
+              textAlign: 'center',
+              fontSize: 16,
+              fontWeight: '500',
+            }}
+          >
             Next
           </Text>
         </TouchableOpacity>
