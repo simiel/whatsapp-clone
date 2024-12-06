@@ -1,8 +1,8 @@
-import { View, ScrollView } from 'react-native';
-import React, { useMemo, useState } from 'react';
-import { RadioGroup } from 'react-native-radio-buttons-group';
-import languages from '@/constants/Languages';
-import Colors from '@/constants/Colors';
+import { View, ScrollView } from "react-native";
+import React, { useMemo, useState } from "react";
+import { RadioGroup } from "react-native-radio-buttons-group";
+import languages from "@/legacy/constants/Languages";
+import Colors from "@/legacy/constants/Colors";
 
 const Language = () => {
   const radioButtons = useMemo(
@@ -27,16 +27,16 @@ const Language = () => {
     []
   );
 
-  const [selectedId, setSelectedId] = useState<string | undefined>('1');
+  const [selectedId, setSelectedId] = useState<string | undefined>("1");
 
   return (
-    <View style={{ flex: 1, backgroundColor: 'white' }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
       <ScrollView>
         <RadioGroup
           radioButtons={radioButtons}
           onPress={setSelectedId}
           selectedId={selectedId}
-          containerStyle={{ alignItems: 'flex-start' }}
+          containerStyle={{ alignItems: "flex-start" }}
         />
       </ScrollView>
     </View>

@@ -6,30 +6,30 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
-} from 'react-native';
-import React from 'react';
+} from "react-native";
+import React from "react";
 import {
   Menu,
   MenuOption,
   MenuOptions,
   MenuTrigger,
-} from 'react-native-popup-menu';
-import { ArrowDown2, More } from 'iconsax-react-native';
-import Colors from '@/constants/Colors';
+} from "react-native-popup-menu";
+import { ArrowDown2, More } from "iconsax-react-native";
+import Colors from "@/legacy/constants/Colors";
 
 const Phone = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <KeyboardAvoidingView behavior='padding' style={{ padding: 20, flex: 1 }}>
+      <KeyboardAvoidingView behavior="padding" style={{ padding: 20, flex: 1 }}>
         {/* Header and menu */}
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <Text
             style={{
               color: Colors.teal,
-              fontWeight: '600',
+              fontWeight: "600",
               fontSize: 20,
               flex: 1,
-              textAlign: 'center',
+              textAlign: "center",
             }}
           >
             Enter your phone number
@@ -38,21 +38,21 @@ const Phone = () => {
             <MenuTrigger>
               <More
                 size={24}
-                color='black'
-                variant='Broken'
-                style={{ transform: [{ rotate: '90deg' }] }}
+                color="black"
+                variant="Broken"
+                style={{ transform: [{ rotate: "90deg" }] }}
               />
             </MenuTrigger>
             <MenuOptions optionsContainerStyle={{ paddingVertical: 10 }}>
-              <MenuOption text='Link as companion device' />
-              <MenuOption text='Help' />
+              <MenuOption text="Link as companion device" />
+              <MenuOption text="Help" />
             </MenuOptions>
           </Menu>
         </View>
 
         {/* Disclaimer */}
         <View style={{ marginTop: 30 }}>
-          <Text style={{ fontSize: 15, textAlign: 'center' }}>
+          <Text style={{ fontSize: 15, textAlign: "center" }}>
             WhatsApp will need to verify your phone number. Carrier charges may
             apply. <Text style={{ color: Colors.blue }}>What's my number?</Text>
           </Text>
@@ -70,31 +70,31 @@ const Phone = () => {
               style={{
                 borderBottomWidth: 1,
                 borderColor: Colors.teal,
-                flexDirection: 'row',
-                alignItems: 'center',
+                flexDirection: "row",
+                alignItems: "center",
               }}
             >
-              <Text style={{ flex: 1, textAlign: 'center', fontSize: 16 }}>
+              <Text style={{ flex: 1, textAlign: "center", fontSize: 16 }}>
                 Ghana
               </Text>
-              <ArrowDown2 size='24' color={Colors.teal} variant='Bold' />
+              <ArrowDown2 size="24" color={Colors.teal} variant="Bold" />
             </View>
           </TouchableOpacity>
 
-          <View style={{ flexDirection: 'row', marginTop: 15, gap: 20 }}>
+          <View style={{ flexDirection: "row", marginTop: 15, gap: 20 }}>
             <View
               style={{
                 flex: 1,
                 borderBottomWidth: 1,
                 borderColor: Colors.teal,
-                flexDirection: 'row',
-                alignItems: 'center',
+                flexDirection: "row",
+                alignItems: "center",
                 gap: 5,
               }}
             >
               <Text
                 style={{
-                  textAlign: 'center',
+                  textAlign: "center",
                   fontSize: 16,
                   color: Colors.gray,
                 }}
@@ -102,10 +102,10 @@ const Phone = () => {
                 +
               </Text>
               <TextInput
-                placeholder=''
+                placeholder=""
                 style={{ flex: 1, fontSize: 16 }}
-                keyboardType='number-pad'
-                enterKeyHint='done'
+                keyboardType="number-pad"
+                enterKeyHint="done"
                 // cursorColor={'red'}
               />
             </View>
@@ -118,10 +118,10 @@ const Phone = () => {
               }}
             >
               <TextInput
-                placeholder='Phone number'
+                placeholder="Phone number"
                 style={{ flex: 1, fontSize: 16 }}
-                keyboardType='number-pad'
-                enterKeyHint='done'
+                keyboardType="number-pad"
+                enterKeyHint="done"
                 // cursorColor={'red'}
               />
             </View>
@@ -135,16 +135,16 @@ const Phone = () => {
             paddingVertical: 10,
             paddingHorizontal: 20,
             borderRadius: 100,
-            alignSelf: 'center',
-            marginTop: 'auto',
+            alignSelf: "center",
+            marginTop: "auto",
           }}
         >
           <Text
             style={{
-              color: 'white',
-              textAlign: 'center',
+              color: "white",
+              textAlign: "center",
               fontSize: 16,
-              fontWeight: '500',
+              fontWeight: "500",
             }}
           >
             Next
